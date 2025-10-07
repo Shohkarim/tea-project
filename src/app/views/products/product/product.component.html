@@ -1,0 +1,16 @@
+<div class="container card-product"  >
+
+  <h2 class="text-center p-5 wow animate__backInLeft">Описание товара</h2>
+  <div class="col-lg-4 mb-3  product-card" >
+    <div class="card" style="width: 100%;">
+      <!--  <a href="{{product.image}}" class="product-image">  </a> -->
+      <img src="{{product.image}}" class="card-img-top" alt="...">
+
+      <div class="card-body">
+        <h5 class="card-title">{{product.title}}</h5>
+        <p class="card-text">{{product.description}}</p>
+        <p class="card-text price"><span>Цена:</span> {{product.price| currencyPipe}}</p>
+        <a href="#" class="btn btn-primary w-100 hvr-sweep-to-right" [routerLink]="['/order']"  [queryParams]="{product: product.title}">Купить</a>
+      </div>
+    </div>
+  </div>

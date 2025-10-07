@@ -1,1 +1,201 @@
-/* You can add global styles to this file, and also import other style files */
+
+.form {
+  margin: 0 auto;
+}
+
+/* === Карусель === */
+ .carousel-control-prev-icon,
+ .carousel-control-next-icon {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #076BFF;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+
+.carousel-control-prev-icon, .carousel-control-next-icon{
+  background-color: #076BFF;
+}
+
+.carousel .carousel-indicators button{
+  display: none;
+}
+
+.accordion-content .accordion-button {
+  justify-content: center;
+  text-align: center;
+}
+.accordion-item {
+  //width: 856px;
+  margin-bottom: 5px;
+  border-radius: 10px !important;
+}
+
+
+:host ::ng-deep .carousel-control-prev-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='blue' viewBox='0 0 16 16'%3e%3cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3e%3c/svg%3e");
+}
+
+:host ::ng-deep .carousel-control-next-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='blue' viewBox='0 0 16 16'%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+/* === Аккордеон === */
+:host ::ng-deep .accordion {
+  margin: 0 auto;
+  max-width: 856px;
+  --bs-accordion-active-bg: #076BFF;
+  --bs-accordion-btn-bg: #076BFF;
+  --bs-accordion-active-color: #fff;
+}
+
+:host ::ng-deep .accordion-button {
+  color: #FFFFFF;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  height: 69px;
+}
+
+:host ::ng-deep .accordion-button:not(.collapsed)::after {
+  border-radius: 10px;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='#ffffff' stroke='white' stroke-linecap='round' stroke-linejoin='round' viewBox='0 0 16 16'%3e%3cpath d='M2 5L8 11L14 5'/%3e%3c/svg%3e");
+}
+
+:host ::ng-deep .accordion-button::after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' viewBox='0 0 16 16'%3e%3cpath d='M2 5L8 11L14 5'/%3e%3c/svg%3e");
+}
+
+
+/* overlay */
+.popup-overlay{
+  position: fixed;
+  inset: 0; /* top:0; right:0; bottom:0; left:0; */
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  /* pointer-events: auto; */ /* если хотим закрывать по клику — слушаем клик в шаблоне */
+}
+
+/* popup */
+.popup{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1001;
+  width: min(90vw, 360px);
+  padding: 16px 18px;
+  box-sizing: border-box;
+  height: auto;
+  font-size: 16px;
+  color: #FFFFFF;
+  text-align: center;
+  background: #cfd23e57;
+  border-radius: 10px;
+  animation: popup-appear .7s ease both;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
+
+/* текст внутри попапа */
+.popup-text{
+  margin: 0;
+  line-height: 1.3;
+  font-weight: 500;
+}
+
+/* кнопка */
+.popup-btn{
+  display: inline-block;
+  min-width: 120px;
+  height: 40px;
+  border-radius: 8px;
+  background: #c6bd21e6;
+  color: #ffffff;
+  font-size: 16px;
+  border: 0;
+  cursor: pointer;
+  padding: 0 14px;
+  margin: 0;
+}
+.popup-close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: transparent;
+  border: none;
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.popup-close:hover {
+  color: #ffdddd;
+}
+
+/* анимация появления */
+@keyframes popup-appear {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -45%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* небольшие улучшения под мобилки */
+@media (max-width: 420px) {
+  .popup { padding: 12px; }
+  .popup-text { font-size: 15px; }
+  .popup-btn { min-width: 100px; height: 38px; font-size: 15px; }
+}
+
+//for inputs
+input.ng-invalid.ng-dirty,
+input.ng-invalid.ng-touched{
+  border-color: red;
+}
+.invalid-feedback{
+  display: block;
+}
+
+
+//loader
+.loader-bg{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.49);
+}
+.loader{
+  border: 15px solid #f3f3f3;
+  border-top: 15px solid #ffaf18;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {transform: rotate(0deg)}
+  100%{transform: rotate(360deg)}
+}
+
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';

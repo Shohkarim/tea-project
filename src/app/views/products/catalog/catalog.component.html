@@ -1,0 +1,21 @@
+<div class="container" id="catalog">
+  <h1 class="text-center p-5 wow animate__backInLeft">Наши чайные коллекции</h1>
+  <div class=" row row-cols-1 row-cols-sm-2 row-cols-md-3 row- cols-lg-3 " >
+    <div class="col-lg-4 mb-3 wow animate__backInRight"  *ngFor="let product of products">
+      <div class="card" style="width: 100%;">
+        <!-- <a href="{{product.image}}" class="product-image">  </a> -->
+        <img src="{{product.image}}" class="card-img-top" alt="...">
+
+        <div class="card-body">
+          <h5 class="card-title">{{product.title}}</h5>
+          <p class="card-text">{{product.description | reduceText}}</p>
+          <a href="#" class="btn btn-primary hvr-sweep-to-right" [routerLink]="['/product', product.id]">Подробнее</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="loader-bg" *ngIf="loading">
+    <div class="loader"></div>
+  </div>
+
+</div>

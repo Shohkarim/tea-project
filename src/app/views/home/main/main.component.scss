@@ -1,0 +1,62 @@
+.carousel-indicators {
+
+}
+.accordion-header{
+
+}
+ .accordion-item {
+  width: 856px;
+
+}
+
+.carousel-control-prev-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='blue'%3e%3cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3e%3c/svg%3e");
+  width: 40px;
+  height: 40px;
+  top: 432px;
+  border: 1px solid #076BFF;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+
+}
+
+.carousel-control-next-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='blue'%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+  width: 40px;
+  height: 40px;
+  top: 432px;
+  border: 1px solid #076BFF;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+
+}
+
+#dialog {
+  display: none;
+}
+
+
+.accordion {
+  margin: 0 auto;
+  max-width: 856px;
+  --bs-accordion-active-bg: #076BFF;
+  --bs-accordion-btn-bg: #076BFF;
+  --bs-accordion-active-color: #fff;
+}
+
+.accordion-button {
+  color: #FFFFFF;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  height: 69px;
+}
+
+.accordion-button:not(.collapsed)::after {
+  border-radius: 10px;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='M2 5L8 11L14 5'/%3e%3c/svg%3e");
+}
+
+.accordion-button::after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='M2 5L8 11L14 5'/%3e%3c/svg%3e");
+
+}

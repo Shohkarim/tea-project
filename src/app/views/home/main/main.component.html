@@ -1,0 +1,32 @@
+<div class="container">
+
+  <ngb-carousel *ngIf="images && images.length" class="mb-5">
+    <ng-template ngbSlide *ngFor="let img of images; let i = index">
+      <img [src]="img" class="d-block w-100 rounded" alt="Слайд {{ i + 1 }}">
+    </ng-template>
+  </ngb-carousel>
+
+  <h2 class="text-center m-5 wow animate__backInLeft">Ответы на часто задаваемые вопросы</h2>
+
+  <ngb-accordion [closeOthers]="true" activeIds="panel-0" class="accordion-flush accordion-content">
+    <ngb-panel *ngFor="let item of faqs; let i = index" [id]="'panel-' + i" [title]="item.title">
+      <ng-template ngbPanelContent>
+        {{ item.content }}
+      </ng-template>
+    </ngb-panel>
+  </ngb-accordion>
+
+</div>
+
+<!-- показывать только если showPopup === true -->
+<div *ngIf="popup">
+  <div class="popup-overlay" (click)="closePopup()"></div>
+
+  <div class="popup" role="dialog" aria-modal="true" aria-label="Попап: чайные коллекции">
+    <button class="popup-close" (click)="closePopup()" aria-label="Закрыть попап">
+      &times;
+    </button>
+    <p class="popup-text">Посмотрите наши чайные коллекции</p>
+    <button class="popup-btn" (click)="goToCatalog()">Смотреть</button>
+  </div>
+</div>

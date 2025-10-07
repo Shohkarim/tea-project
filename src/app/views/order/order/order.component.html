@@ -1,0 +1,107 @@
+<div class="container ">
+  <main>
+    <div class="py-5 text-center">
+      <h2 class=" wow animate__backInLeft">Сделать заказ</h2>
+    </div>
+
+    <div class="col-md-12 col-lg-6 form d-flex justify-content-xxl-center">
+      <form class="needs-validation" novalidate="" [formGroup]="orderForm" >
+        <div class="row g-3">
+          <div class="col-sm-4">
+            <label for="firstName" class="form-label">Имя</label>
+            <input type="text" class="form-control" id="firstName"
+                   formControlName="firstName"
+                   placeholder=""
+                   value="">
+            <div class="invalid-feedback" *ngIf="orderForm.get('firstName')?.invalid
+               && (orderForm.get('firstName')?.touched || orderForm.get('firstName')?.dirty)
+               && orderForm.get('firstName')?.errors?.['required']">
+              Valid first name is required.
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <label for="lastName" class="form-label">Фамилия</label>
+            <input type="text" class="form-control" id="lastName"
+                   formControlName = "lastName"
+                   placeholder=""
+                   value="">
+            <div class="invalid-feedback" *ngIf="orderForm.get('lastName')?.invalid
+               && (orderForm.get('lastName')?.touched || orderForm.get('lastName')?.dirty)
+               && orderForm.get('lastName')?.errors?.['required']">
+              Valid last name is required.
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <label for="lastName" class="form-label">Телефон</label>
+            <input type="text" class="form-control" id="phone"
+                   formControlName="phoneNumber"
+                   placeholder="" value="">
+            <div class="invalid-feedback" *ngIf="orderForm.get('phoneNumber')?.invalid
+               && (orderForm.get('phoneNumber')?.touched || orderForm.get('phoneNumber')?.dirty)
+               && orderForm.get('phoneNumber')?.errors?.['required']">
+              Valid phone number is required.
+            </div>
+          </div>
+          <div class="col-6">
+            <label for="address" class="form-label">Страна</label>
+            <input type="text" class="form-control" id="country"
+                   formControlName="country">
+            <div class="invalid-feedback" *ngIf="orderForm.get('country')?.invalid
+               && (orderForm.get('country')?.touched || orderForm.get('country')?.dirty)
+               && orderForm.get('country')?.errors?.['required']">
+              Valid shipping country is required.
+            </div>
+          </div>
+          <div class="col-6">
+            <label for="address" class="form-label">Индекс</label>
+            <input type="text" class="form-control index " id="index"
+                   formControlName="zip">
+            <div class="invalid-feedback" *ngIf="orderForm.get('zip')?.invalid
+               && (orderForm.get('zip')?.touched || orderForm.get('zip')?.dirty)
+               && orderForm.get('zip')?.errors?.['required']">
+              Valid ZIP is required.
+            </div>
+          </div>
+
+          <div class="col-6">
+            <label for="address" class="form-label">Товар</label>
+            <input type="text" class="form-control" id="product"
+                   formControlName="product">
+            <div class="invalid-feedback" *ngIf="orderForm.get('product')?.invalid
+               && (orderForm.get('product')?.touched || orderForm.get('product')?.dirty)
+               && orderForm.get('product')?.errors?.['required']">
+              Please enter Your favorite tea.
+            </div>
+          </div>
+
+          <div class="col-12">
+            <label for="address" class="form-label">Address</label>
+            <input type="text" class="form-control" id="address"
+                   formControlName="address">
+            <div class="invalid-feedback" *ngIf="orderForm.get('address')?.invalid
+               && (orderForm.get('address')?.touched || orderForm.get('address')?.dirty)
+               && orderForm.get('address')?.errors?.['required']">
+              Please enter your shipping address.
+            </div>
+          </div>
+
+          <div class="col-6">
+            <label for="address" class="form-label">Комментарий к заказу</label>
+            <textarea rows="3" cols="50" class="form-control" id="comment"
+                      formControlName="comment"
+                      required=""> </textarea>
+            <div class="invalid-feedback" *ngIf="orderForm.get('comment')?.invalid
+               && (orderForm.get('comment')?.touched || orderForm.get('comment')?.dirty)
+               && orderForm.get('comment')?.errors?.['required']">
+              Please comment. It important for us
+            </div>
+          </div>
+
+        </div>
+        <button id="sendData" class=" btn btn-primary  mt-3 hvr-sweep-to-right" type="button" (click)="submitOrder()" [disabled]="loading"> {{ loading ? 'Отправка...' : 'Отправить' }}</button>
+      </form>
+    </div>
+  </main>
+</div>
+
